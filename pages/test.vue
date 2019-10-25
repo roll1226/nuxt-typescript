@@ -5,33 +5,37 @@
       {{ aaa }}
       {{ texts }}
     </h1>
-
+    <!--
     <input v-model="text" type="text" />
     <button @click="textChange">
       変更
-    </button>
+    </button> -->
+    <child-component v-model="localValue" />
+    <!-- <testinput /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import { IState } from '../store/index'
+import ChildComponent from '@/components/Input.vue'
 import Logo from '~/components/Logo.vue'
+import testinput from '~/components/Input.vue'
+import { IText } from '@/store'
 
 @Component({
-  components: { Logo }
+  components: { Logo, testinput, ChildComponent }
 })
 export default class test extends Vue {
   public aaa: string = '眠い'
-  public text: string = ''
 
   get texts(): string {
-    return (this.$store.state as IState).text
+    return (this.$store.state.texts as IText).text
   }
 
-  textChange() {
-    if (this.text === '') return
-    this.$store.commit('SET_TEXT', this.text)
-  }
+  public localValue?: string = ''
+  // textChange() {
+  //   if (this.text === '') return
+  //   this.$store.commit('SET_TEXT', this.text)
+  // }
 }
 </script>

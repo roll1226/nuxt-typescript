@@ -11,23 +11,29 @@ export interface IMovie {
 // export type loadStates = 'loading' | 'done' | 'error' | 'none'
 // export type submitStates = 'submitting' | 'done' | 'error' | 'none'
 
-export interface IState {
+export interface IText {
   text: string,
   bool: boolean
 }
 
+interface IState {
+  texts: IText
+}
+
 export const state = (): IState => ({
-  text: '眠くない',
-  bool: false
+  texts: {
+    text: '眠くない',
+    bool: false
+  }
 })
 
 export type loadStates = true | false
 
 export const mutations = {
   SET_TEXT(state: IState, payload: string) {
-    state.text = payload
+    state.texts.text = payload
   },
   CHANGE_BOOL(state: IState, payload: boolean) {
-    state.bool = payload
+    state.texts.bool = payload
   }
 }
