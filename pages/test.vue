@@ -3,15 +3,8 @@
     <Logo />
     <h1>
       {{ aaa }}
-      {{ texts }}
     </h1>
-    <!--
-    <input v-model="text" type="text" />
-    <button @click="textChange">
-      変更
-    </button> -->
-    <child-component v-model="localValue" />
-    <!-- <testinput /> -->
+    <child-component v-model="localValue" :test="texts" />
   </div>
 </template>
 
@@ -27,15 +20,12 @@ import { IText } from '@/store'
 })
 export default class test extends Vue {
   public aaa: string = '眠い'
+  public test: string = 'テストテキスト'
 
   get texts(): string {
     return (this.$store.state.texts as IText).text
   }
 
   public localValue?: string = ''
-  // textChange() {
-  //   if (this.text === '') return
-  //   this.$store.commit('SET_TEXT', this.text)
-  // }
 }
 </script>

@@ -5,6 +5,7 @@
       変更
     </button>
     {{ value }}
+    {{ test }}
   </div>
 </template>
 
@@ -12,7 +13,10 @@
 import { Component, Vue, Prop, Emit } from 'nuxt-property-decorator'
 @Component
 export default class testin extends Vue {
-  @Prop() public value!: string
+  @Prop()
+  public value!: string
+
+  @Prop({ type: String, required: true }) private test!: string
 
   @Emit()
   public input(value: string) { // eslint-disable-line
