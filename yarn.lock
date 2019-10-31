@@ -4185,6 +4185,13 @@ firebase@^7.2.2:
     "@firebase/storage" "0.3.16"
     "@firebase/util" "0.2.31"
 
+firestore-simple@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/firestore-simple/-/firestore-simple-4.0.0.tgz#b27bfeab173caa7924cb9394bdff2d6be1bab6bc"
+  integrity sha512-gq/tsF/wPV9dSkgaBnebVB8qxS6FuJvktbPT6+GVcaKkx3OX1zfYUti9wKFeXAaHU0PSPORqzad4foDdUO60RQ==
+  dependencies:
+    utility-types "3.7.0"
+
 flat-cache@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-2.0.1.tgz#5d296d6f04bda44a4630a301413bdbc2ec085ec0"
@@ -8644,6 +8651,11 @@ utila@^0.4.0, utila@~0.4:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
+
+utility-types@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.7.0.tgz#51f1c29fa35d4267488345706efcf3f68f2b1933"
+  integrity sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
 
 utils-merge@1.0.1:
   version "1.0.1"
