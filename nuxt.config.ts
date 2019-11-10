@@ -49,6 +49,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv'
   ],
+  // env: {
+  //   ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY as string,
+  //   ALGOLIA_APP_ID: process.env.ALGOLIA_APP_ID as string,
+  // },
   /*
    ** Build configuration
    */
