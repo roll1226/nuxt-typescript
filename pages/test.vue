@@ -4,7 +4,7 @@
     <h1>
       {{ aaa }}
     </h1>
-    <child-component v-model="localValue" :test="texts" />
+    <child-component v-model="localValue" :test="texts.text" />
   </div>
 </template>
 
@@ -16,15 +16,20 @@ import testinput from '~/components/Input.vue'
 import { IText } from '@/store'
 
 @Component({
-  components: { Logo, testinput, ChildComponent }
+  components: { Logo, testinput, ChildComponent },
+  computed: {
+    texts(): IText {
+      return this.$store.state.texts
+    }
+  }
 })
 export default class test extends Vue {
   public aaa: string = '眠い'
   public test: string = 'テストテキスト'
 
-  get texts(): string {
-    return (this.$store.state.texts as IText).text
-  }
+  // get texts(): IText {
+  //   return this.$store.state.texts as IText
+  // }
 
   public localValue?: string = ''
 }

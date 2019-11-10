@@ -19,6 +19,7 @@
     "firestore-simple": "^4.0.0",
     "nuxt": "^2.0.0",
     "nuxt-property-decorator": "^2.5.0",
+    "uuid": "^3.3.3",
     "vuex-class-component": "^2.0.4"
   },
   "devDependencies": {

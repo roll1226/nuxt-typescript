@@ -63,11 +63,13 @@
     </select>
     {{ code }}
     {{ error }}
+    {{ uuid }}
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+const uuidv1 = require('uuid/v4')
 
 @Component
 export default class axios extends Vue {
@@ -76,6 +78,9 @@ export default class axios extends Vue {
   addres1: string = ''
   addres2: string = ''
   error?: string = ''
+  uuid?: string = uuidv1()
+    .split('-')
+    .join('')
 
   async checkCode() {
     // 初期化
