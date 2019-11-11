@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import algoliasearch from 'algoliasearch'
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Watch } from 'nuxt-property-decorator'
 
 const client = algoliasearch(
   process.env.ALGOLIA_APP_ID as string,
@@ -44,12 +44,23 @@ export default class algolie extends Vue {
 
   async test() {
     if (this.title === '') return
-    await index.addObject({ title: this.title })
+    await index.addObject(this.title)
+    this.title = ''
   }
 
+  @Watch('query')
   async search() {
+    if (this.query === '') {
+      this.queryList = []
+      return
+    }
     const searchResult = await index.search({ query: this.query })
     this.queryList = searchResult.hits
   }
+
+  // async search() {
+  //   const searchResult = await index.search({ query: this.query })
+  //   this.queryList = searchResult.hits
+  // }
 }
 </script>
